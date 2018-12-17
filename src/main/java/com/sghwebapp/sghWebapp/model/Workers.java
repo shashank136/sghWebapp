@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Worker {
+public class Workers {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -16,9 +16,9 @@ public class Worker {
 	private long contact;
 	private String adhaarCard;
 	
-	public Worker(){}
+	public Workers(){}
 	
-	public Worker(String firstName, String lastName, long contact, String adhaarCard) {
+	public Workers(String firstName, String lastName, long contact, String adhaarCard) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.contact = contact;
@@ -63,6 +63,34 @@ public class Worker {
 
 	public void setAdhaarCard(String adhaarCard) {
 		this.adhaarCard = adhaarCard;
-	}	
+	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Workers other = (Workers) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Worker [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", contact=" + contact
+				+ ", adhaarCard=" + adhaarCard + "]";
+	}	
+	
 }
