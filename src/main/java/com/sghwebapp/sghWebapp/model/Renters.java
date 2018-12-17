@@ -13,13 +13,13 @@ public class Renters {
 	private long id;
 	private String firstName;
 	private String lastName;
-	private long contact;
+	private String contact;
 	private String address;
 	private int rent;
 	
 	public Renters() {}
 	
-	public Renters(String firstName, String lastName, long contact, String address, int rent) {
+	public Renters(String firstName, String lastName, String contact, String address, int rent) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.contact = contact;
@@ -51,11 +51,11 @@ public class Renters {
 		this.lastName = lastName;
 	}
 
-	public long getContact() {
+	public String getContact() {
 		return contact;
 	}
 
-	public void setContact(long contact) {
+	public void setContact(String contact) {
 		this.contact = contact;
 	}
 

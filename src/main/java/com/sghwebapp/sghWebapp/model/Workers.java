@@ -13,12 +13,12 @@ public class Workers {
 	private long id;
 	private String firstName;
 	private String lastName;
-	private long contact;
+	private String contact;
 	private String adhaarCard;
 	
 	public Workers(){}
 	
-	public Workers(String firstName, String lastName, long contact, String adhaarCard) {
+	public Workers(String firstName, String lastName, String contact, String adhaarCard) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.contact = contact;
@@ -49,11 +49,11 @@ public class Workers {
 		this.lastName = lastName;
 	}
 
-	public long getContact() {
+	public String getContact() {
 		return contact;
 	}
 
-	public void setContact(long contact) {
+	public void setContact(String contact) {
 		this.contact = contact;
 	}
 

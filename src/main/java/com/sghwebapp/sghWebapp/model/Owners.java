@@ -14,15 +14,15 @@ public class Owners {
 	private String firstName;
 	private String lastName;
 	private String spouseName;
-	private long number;
-	private int size;
+	private String number;
+	private int size; // family size
 	private boolean welfareFeeStatus;
 	private boolean associationMember;
 	private String address;
 	
 	public Owners() {}
 	
-	public Owners(String firstName, String lastName, String spouseName, long number, int size, boolean welfareFeeStatus,
+	public Owners(String firstName, String lastName, String spouseName, String number, int size, boolean welfareFeeStatus,
 			boolean associationMember, String address) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -66,11 +66,11 @@ public class Owners {
 		this.spouseName = spouseName;
 	}
 
-	public long getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
-	public void setNumber(long number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 
