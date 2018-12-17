@@ -34,9 +34,9 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
 		
 		// Demo data
 		
-		// Owner Mohan
+		// Owners
 		Owners mohan = new Owners("Mohan", "Kumar", "Jyothi", "9999624749", 4, true, true, "Plot No.69");
-		Owners shashank = new Owners("Shashank", "Kumar", "none", "7032473030", 1, true, true, "Plot No.999");
+		Owners shashank = new Owners("Shashank", "Kumar", "none", "7032473030", 1, true, false, "Plot No.999");
 		
 		ownersRepository.save(mohan);
 		ownersRepository.save(shashank);

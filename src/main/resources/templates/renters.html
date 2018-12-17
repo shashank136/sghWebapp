@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Shanker Green Homes</title>
+</head>
+<body>
+	<h1>Renters List</h1>
+	<table border="1">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Contact Number</th>
+			<th>Rent</th>
+			<th>Address</th>
+		</tr>
+		<tr th:each="renter: ${renters}">
+			<td th:text="${renter.firstName}"></td>
+			<td th:text="${renter.lastName}"></td>
+			<td th:text="${renter.contact}"></td>
+			<td th:text="${renter.rent}"></td>
+			<td th:text="${renter.address}"></td>
+		</tr>
+	</table>
+</body>
+</html>
