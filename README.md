@@ -8,6 +8,7 @@ Website for Shanker Green Homes using java spring and hibernate
 3) Java 11
 4) Maven v4.0.0
 5) Thymeleaf template engine
+6) PostgreSQL
 
 # How to deploy the Project
 
