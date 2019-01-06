@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Owners {
@@ -11,13 +12,17 @@ public class Owners {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	
+	@NotBlank(message = "First Name is mandatory")
 	private String firstName;
 	private String lastName;
 	private String spouseName;
+	@NotBlank(message = "Number is mandatory")
 	private String number;
 	private int size; // family size
 	private boolean welfareFeeStatus;
 	private boolean associationMember;
+	@NotBlank(message = "Address is mandatory")
 	private String address;
 	
 	public Owners() {}

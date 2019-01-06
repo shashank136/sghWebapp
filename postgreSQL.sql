@@ -1,0 +1,33 @@
+DROP TABLE IF EXISTS owners;
+  
+CREATE TABLE owners (
+    ID Bigserial PRIMARY KEY NOT NULL,
+    FIRSTNAME varchar(100) NOT NULL,
+    LASTNAME varchar(100) NOT NULL,
+	SPOUSENAME varchar(100),
+	ADDRESS varchar(100) NOT NULL,
+	CONTACT varchar(100) NOT NULL,
+	WELFAREFEESTATUS varchar(100) NOT NULL
+);
+
+DROP TABLE IF EXISTS renters;
+  
+CREATE TABLE renters (
+    ID Bigserial PRIMARY KEY NOT NULL,
+    FIRSTNAME varchar(100) NOT NULL,
+    LASTNAME varchar(100) NOT NULL,
+	OWNERNAME varchar(100) NOT NULL,
+	ADDRESS varchar(100) NOT NULL,
+	CONTACT varchar(100) NOT NULL
+);
+
+DROP TABLE IF EXISTS workers;
+  
+CREATE TABLE workers (
+    ID Bigserial PRIMARY KEY NOT NULL,
+    FIRSTNAME varchar(100) NOT NULL,
+    LASTNAME varchar(100),
+	AADHAAR varchar(100) NOT NULL,
+	CONTACT varchar(100) NOT NULL
+);
+

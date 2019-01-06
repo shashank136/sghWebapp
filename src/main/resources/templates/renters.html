@@ -10,17 +10,21 @@
 	<h1>Renters List</h1>
 	<table class="table table-bordered">
 		<tr>
+			<th>Id</th>
 			<th>First Name</th>
 			<th>Last Name</th>
+			<th>Owner Name</th>
 			<th>Contact Number</th>
-			<th>Rent</th>
+			<th>Family Size</th>
 			<th>Address</th>
 		</tr>
 		<tr th:each="renter: ${renters}">
-			<td th:text="${renter.firstName}"></td>
-			<td th:text="${renter.lastName}"></td>
+			<td th:text="${renter.id}"></td>
+			<td th:text="${renter.firstname}"></td>
+			<td th:text="${renter.lastname}"></td>
+			<td th:text="${renter.ownername}"></td>
 			<td th:text="${renter.contact}"></td>
-			<td th:text="${renter.rent}"></td>
+			<td th:text="${renter.familysize}"></td>
 			<td th:text="${renter.address}"></td>
 		</tr>
 	</table>

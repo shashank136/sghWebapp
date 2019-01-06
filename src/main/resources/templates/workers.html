@@ -16,10 +16,11 @@
 			<th>Aadaar Card</th>
 		</tr>
 		<tr th:each="worker: ${workers}">
-			<td th:text="${worker.firstName}"></td>
-			<td th:text="${worker.lastName}"></td>
+			<td th:text="${worker.id}"></td>
+			<td th:text="${worker.firstname}"></td>
+			<td th:text="${worker.lastname}"></td>
 			<td th:text="${worker.contact}"></td>
-			<td th:text="${worker.adhaarCard}"></td>
+			<td th:text="${worker.aadhaar}"></td>
 		</tr>
 	</table>
 </body>

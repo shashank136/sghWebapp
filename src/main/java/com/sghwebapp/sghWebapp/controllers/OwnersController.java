@@ -14,7 +14,7 @@ public class OwnersController {
 	public OwnersController(OwnersRepository ownersRepository) {
 		this.ownersRepository = ownersRepository;
 	}
-
+	
 	@RequestMapping("/owners")
 	public String getOwner(Model model) {
 		

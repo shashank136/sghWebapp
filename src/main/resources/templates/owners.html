@@ -10,23 +10,23 @@
 	<h1>Owners List</h1>
 	<table class="table table-bordered">
 		<tr>
+			<th>Id</th>
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Spouse Name</th>
 			<th>Contact Number</th>
 			<th>Family size</th>
-			<th>Association Membership</th>
 			<th>Welfare payment Fee Status</th>
 			<th>Address</th>
 		</tr>
 		<tr th:each="owner: ${owners}">
-			<td th:text="${owner.firstName}"></td>
-			<td th:text="${owner.lastName}"></td>
-			<td th:text="${owner.spouseName}"></td>
-			<td th:text="${owner.number}"></td>
-			<td th:text="${owner.size}"></td>
-			<td th:text="${owner.associationMember}"></td>
-			<td th:text="${owner.welfareFeeStatus}"></td>
+			<td th:text="${owner.id}"></td>
+			<td th:text="${owner.firstname}"></td>
+			<td th:text="${owner.lastname}"></td>
+			<td th:text="${owner.spousename}"></td>
+			<td th:text="${owner.contact}"></td>
+			<td th:text="${owner.familysize}"></td>
+			<td th:text="${owner.welfarefeestatus}"></td>
 			<td th:text="${owner.address}"></td>
 		</tr>
 	</table>

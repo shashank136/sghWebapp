@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Owner Info</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="'id: ' + ${owner.id}" />
+    <p th:text="'First Name: ' + ${owner.firstname}" />
+    <p th:text="'Last Name: ' + ${owner.lastname}" />
+    <p th:text="'Spouse Name: ' + ${owner.spousename}" />
+    <p th:text="'Address: ' + ${owner.address}" />
+    <p th:text="'Contact: ' + ${owner.contact}" />
+    <p th:text="'Family Size: ' + ${owner.familysize}" />
+    <p th:text="'Welfare Fee Payment Status: ' + ${owner.welfarefeestatus}" />
+</body>
+</html>
