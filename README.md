@@ -13,4 +13,6 @@ Website for Shanker Green Homes using java spring and hibernate
 # How to deploy the Project
 
 1) Clone the project to a directory using ```git clone https://github.com/shashank136/sghWebapp.git```
-2) Start the project using command ```mvnw spring-boot:run``` (for windows)
+2) Download the latest version of PostgreSQL.
+3) Create new database: 'sghdb' and copy the postgreSQL file into the sql terminal and execute it to get the tables.
+4) Start the project using command ```mvnw spring-boot:run``` (for windows)
