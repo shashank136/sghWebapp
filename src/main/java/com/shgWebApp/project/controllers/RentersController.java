@@ -10,11 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.shgWebApp.project.commands.OwnersForm;
 import com.shgWebApp.project.commands.RentersForm;
 import com.shgWebApp.project.converters.RentersFormToRenters;
 import com.shgWebApp.project.converters.RentersToRentersForm;
-import com.shgWebApp.project.model.Owners;
 import com.shgWebApp.project.model.Renters;
 import com.shgWebApp.project.repositories.RentersRepository;
 

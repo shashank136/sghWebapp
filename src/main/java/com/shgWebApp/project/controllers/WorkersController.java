@@ -10,11 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.shgWebApp.project.commands.RentersForm;
 import com.shgWebApp.project.commands.WorkersForm;
 import com.shgWebApp.project.converters.WorkersFormToWorkers;
 import com.shgWebApp.project.converters.WorkersToWorkersForm;
-import com.shgWebApp.project.model.Renters;
 import com.shgWebApp.project.model.Workers;
 import com.shgWebApp.project.repositories.WorkersRepository;
 
