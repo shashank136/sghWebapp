@@ -5,8 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Worker Form</h1>
-    <form action="#" th:action="@{/workers/form}" th:object="${workers}" method="post">
+	<h1>Edit Worker Form</h1>
+    <form action="#" th:action="@{/workers/form}" th:object="${workerForm}" method="post">
+    	<input type="hidden" th:field="*{id}"/>
         <p>First Name: <input type="text" th:field="*{firstname}" /></p>
         <p>Last Name: <input type="text" th:field="*{lastname}" /></p>
         <p>Contact: <input type="text" th:field="*{contact}" /></p>

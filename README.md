@@ -3,7 +3,7 @@ Website for Shanker Green Homes using java spring and hibernate
 
 # Technologies used:
 
-1) Java SpringBoot v2.1.1
+1) Java Spring 5 & SpringBoot v2.1.1
 2) Hibernate
 3) Java 11
 4) Maven v4.0.0

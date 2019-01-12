@@ -10,11 +10,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.shgWebApp.project.commands.RentersForm;
+import com.shgWebApp.project.commands.WorkersForm;
+import com.shgWebApp.project.converters.WorkersFormToWorkers;
+import com.shgWebApp.project.converters.WorkersToWorkersForm;
+import com.shgWebApp.project.model.Renters;
 import com.shgWebApp.project.model.Workers;
 import com.shgWebApp.project.repositories.WorkersRepository;
 
 @Controller
 public class WorkersController {
+	
+	private WorkersToWorkersForm workersToWorkersForm;
+	private WorkersFormToWorkers workersFormToWorkers;
+	
+	@Autowired
+	public void setWorkersToWorkersForm(WorkersToWorkersForm workersToWorkersForm) {
+		this.workersToWorkersForm = workersToWorkersForm;
+	}
+	
+	@Autowired
+	public void setWorkersFormToWorkers(WorkersFormToWorkers workersFormToWorkers) {
+		this.workersFormToWorkers = workersFormToWorkers;
+	}
 	
 	@Autowired
 	WorkersRepository workersRepository;
@@ -23,12 +41,14 @@ public class WorkersController {
 	
 	@RequestMapping(value="/workers/form", method=RequestMethod.GET)
 	public String workersForm(Model model) {
-		model.addAttribute("workers", new Workers());
+		model.addAttribute("workers", new WorkersForm());
 		return "workerform";
 	}
 	
 	@RequestMapping(value="/workers/form", method=RequestMethod.POST)
-	public String workerSubmit(@ModelAttribute Workers worker, Model model) {
+	public String workerSubmit(@ModelAttribute WorkersForm workerForm, Model model) {
+		
+		Workers worker = workersFormToWorkers.convert(workerForm);
 		
 		model.addAttribute("workers", worker);
 		String info = String.format("worker Submission: id = %d, firstname = %s, lastname = %s, aadhaar = %s, contact = %s",
@@ -40,6 +60,18 @@ public class WorkersController {
 		
 		return "workerresult";
 	}
+	
+	@RequestMapping(value="/workers/edit", method=RequestMethod.GET)
+    public String edit(@RequestParam("id") long id, Model model){
+        
+		Workers worker = workersRepository.findById(id)
+				.orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+
+		WorkersForm workerForm = workersToWorkersForm.convert(worker);
+
+        model.addAttribute("workerForm", workerForm);
+        return "editWorker";
+    }
 	
 	@RequestMapping(value="/workers/load", method=RequestMethod.GET)
 	public String workerSubmit(@RequestParam("id") long id, Model model) {

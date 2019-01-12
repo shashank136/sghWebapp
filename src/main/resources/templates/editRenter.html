@@ -5,12 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Worker Form</h1>
-    <form action="#" th:action="@{/workers/form}" th:object="${workers}" method="post">
+	<h1>Renter Form</h1>
+    <form action="#" th:action="@{/renters/form}" th:object="${renterForm}" method="post">
+    	<input type="hidden" th:field="*{id}"/>
         <p>First Name: <input type="text" th:field="*{firstname}" /></p>
         <p>Last Name: <input type="text" th:field="*{lastname}" /></p>
+        <p>Owner Name: <input type="text" th:field="*{ownername}" /></p>
+        <p>Address: <input type="text" th:field="*{address}" /></p>
         <p>Contact: <input type="text" th:field="*{contact}" /></p>
-        <p>Aadhaar Number: <input type="text" th:field="*{aadhaar}" /></p>
+        <p>Family Size: <input type="text" th:field="*{familysize}" /></p>
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form>
 </body>
