@@ -40,7 +40,7 @@ public class OwnersController {
 	@RequestMapping(value="/owners/form", method=RequestMethod.GET)
 	public String ownersForm(Model model) {	// give out the form for owners registration.
 		model.addAttribute("owners", new OwnersForm());
-		return "form";
+		return "owners/form";
 	}
 	
 	@RequestMapping(value="/owners/form", method=RequestMethod.POST)
@@ -56,7 +56,7 @@ public class OwnersController {
 		
 		ownersRepository.save(owner);
 		
-		return "result";
+		return "owners/result";
 	}
 	
 	@RequestMapping(value="/owners/edit", method=RequestMethod.GET)
@@ -68,7 +68,7 @@ public class OwnersController {
 		OwnersForm ownersForm = ownersToOwnersForm.convert(owner);
 
         model.addAttribute("ownersForm", ownersForm);
-        return "editOwner";
+        return "owners/editOwner";
     }
 	
 	@RequestMapping(value="/owners/load", method=RequestMethod.GET)
@@ -77,7 +77,7 @@ public class OwnersController {
 		Owners owner = ownersRepository.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
 		model.addAttribute("owner", owner);
-		return "load";
+		return "owners/load";
 	}
 	
 	@RequestMapping("/owners")
@@ -85,7 +85,7 @@ public class OwnersController {
 		
 		model.addAttribute("owners", ownersRepository.findAll());
 		
-		return "owners";
+		return "owners/owners";
 	}
 }
 
