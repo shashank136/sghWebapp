@@ -1,5 +1,6 @@
 # sghWebapp
-Website for Shanker Green Homes using java spring and hibernate
+Website for Shanker Green Homes using java spring and hibernate.
+I'm still working on the project.
 
 # Technologies used:
 
