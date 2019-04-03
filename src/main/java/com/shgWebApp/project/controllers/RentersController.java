@@ -40,7 +40,7 @@ public class RentersController {
 	@RequestMapping(value="/renters/form", method=RequestMethod.GET)
 	public String rentersForm(Model model) {
 		model.addAttribute("renters", new RentersForm());
-		return "renters/renterform";
+		return "renterform";
 	}
 	
 	@RequestMapping(value="/renters/form", method=RequestMethod.POST)
@@ -56,7 +56,7 @@ public class RentersController {
 		
 		rentersRepository.save(renter);
 		
-		return "renters/renterresult";
+		return "renterresult";
 	}
 	
 	@RequestMapping(value="/renters/edit", method=RequestMethod.GET)
@@ -68,7 +68,7 @@ public class RentersController {
 		RentersForm renterForm = rentersToRentersForm.convert(renter);
 
         model.addAttribute("renterForm", renterForm);
-        return "renters/editRenter";
+        return "editRenter";
     }
 	
 	@RequestMapping(value="/renters/load", method=RequestMethod.GET)
@@ -77,7 +77,7 @@ public class RentersController {
 		Renters renter = rentersRepository.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
 		model.addAttribute("renter", renter);
-		return "renters/renterload";
+		return "renterload";
 	}
 	
 	@RequestMapping("/renters")
@@ -85,6 +85,6 @@ public class RentersController {
 		
 		model.addAttribute("renters", rentersRepository.findAll());
 		
-		return "renters/renters";
+		return "renters";
 	}
 }

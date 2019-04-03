@@ -40,7 +40,7 @@ public class WorkersController {
 	@RequestMapping(value="/workers/form", method=RequestMethod.GET)
 	public String workersForm(Model model) {
 		model.addAttribute("workers", new WorkersForm());
-		return "workers/workerform";
+		return "workerform";
 	}
 	
 	@RequestMapping(value="/workers/form", method=RequestMethod.POST)
@@ -56,7 +56,7 @@ public class WorkersController {
 		
 		workersRepository.save(worker);
 		
-		return "workers/workerresult";
+		return "workerresult";
 	}
 	
 	@RequestMapping(value="/workers/edit", method=RequestMethod.GET)
@@ -68,7 +68,7 @@ public class WorkersController {
 		WorkersForm workerForm = workersToWorkersForm.convert(worker);
 
         model.addAttribute("workerForm", workerForm);
-        return "workers/editWorker";
+        return "editWorker";
     }
 	
 	@RequestMapping(value="/workers/load", method=RequestMethod.GET)
@@ -77,7 +77,7 @@ public class WorkersController {
 		Workers worker = workersRepository.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
 		model.addAttribute("worker", worker);
-		return "workers/workerload";
+		return "workerload";
 	}
 	
 	@RequestMapping("/workers")
@@ -85,7 +85,7 @@ public class WorkersController {
 		
 		model.addAttribute("workers", workersRepository.findAll());
 		
-		return "workers/workers";
+		return "workers";
 	}
 
 }
